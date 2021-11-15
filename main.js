@@ -18,7 +18,7 @@ function uploadimg() {
 
 	ctx.drawImage(img_imgTag, img_x, img_y, img_width, img_height);
 }
-addEventListner("keydown","my_keydown")
+addEventListener("keydown",my_keydown)
 function my_keydown(e)
 {
 	keyPressed = e.keyCode;
@@ -28,7 +28,18 @@ function my_keydown(e)
 			aplhabetkey();
 			document.getElementById("d1").innerHTML="you pressed alphabet key";
 		}
-		
+		else if(keyPressed >=48 && keyPressed <=57){
+			numberkey();
+			document.getElementById("d1").innerHTML="you pressed number key";
+		}
+		else if	(keyPressed >=37 && keyPressed <=40){
+			arrowkey();
+			document.getElementById("d1").innerHTML="you pressed arrow key";
+		}
+		else if(keyPressed == 17 || keyPressed == 18 || keyPressed == 27){
+			specialkey();
+			document.getElementById("d1").innerHTML="you pressed special key";
+		}
 	else{
 		otherkey();
 		document.getElementById("d1").innerHTML="You pressed symbol or other key";
